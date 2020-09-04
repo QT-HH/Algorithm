@@ -1,0 +1,28 @@
+def func(coin,k,cnt,temp,result):
+    if cnt>k:
+        return
+    elif cnt==k:
+        result.append(1)
+        print(temp)
+        return
+
+    for i in coin:
+        new_temp = sorted(temp+[i])
+        if tuple(new_temp) in total:
+            continue
+        else:
+            total.add(tuple(new_temp))
+            func(coin,k,cnt+i,new_temp,result)
+
+
+import sys
+sys.stdin = open('sample_input.txt')
+sys.setrecursionlimit(1<<32)
+n,k = map(int,input().split())
+coin = [int(input()) for _ in range(n)]
+cnt = 0
+temp = []
+total = set()
+result = []
+func(coin,k,cnt,temp,result)
+print(len(result))
