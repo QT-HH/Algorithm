@@ -6,7 +6,7 @@ def comb(v,s,res):
             res[v] = i
             comb(v+1,i+1,res)
 
-n = 4
+n = 5
 m = 2
 result = []
 res = [0]*m

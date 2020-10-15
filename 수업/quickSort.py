@@ -7,10 +7,11 @@ def partition(arr,start,end):
     right = end
     while left <= right:
         # left가 오른쪽으로 이동하며 피벗보다 큰 값을 찾기
-        while left <= right and arr[left] <= pivot:
+        while left <= right and arr[left] >= pivot:
+            if arr[left]==pivot:
             left += 1
         # right가 왼쪽으로 이동하며 피벗보다 작은 값을 찾기
-        while left <= right and arr[right] >= pivot:
+        while left <= right and arr[right] <= pivot:
             right -= 1
 
         # 각각 큰 값과 작은 값을 찾았으면 위치교환
