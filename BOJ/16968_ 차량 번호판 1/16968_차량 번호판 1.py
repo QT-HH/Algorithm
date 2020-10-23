@@ -3,11 +3,17 @@ sys.stdin = open('input.txt')
 
 
 def find(a,b,c,d):
-    if b == a:
-        return 1
-
+    # a = 문자열 길이(마지막 인덱스 위치)
+    # b = 현재 인덱스 위치
+    # c = 이전 인덱스에 들어간 데이터
+    # d = 현재 인덱스의 문자
     for i in board[d]:
-        
+        if i == c:
+            continue
+        elif b == a:
+            cnt[0] += 1
+        else:
+           find(a,b+1,i,ip[b+1])
 
 
 
@@ -17,5 +23,7 @@ board = {
 }
 
 ip = input()
-cnt = 0
-l = len(ip)
+cnt = [0]
+l = len(ip)-1
+find(l,0,-1,ip[0])
+print(cnt[0])
