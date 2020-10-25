@@ -1,29 +1,32 @@
 import sys
 sys.stdin = open('input.txt')
 
-def find(a,b,c):
-    # a = 현재 인덱스
-    # b = 원본 길이
-    # c = tmp
-    tmp = c[:]
-    if a == b-1:
-        res.append(tuple(tmp))
-        c.pop()
-        return
+def comb(a,b,c):
+    if a == n:
+        res.append(tuple(c))
     else:
-        for i in range(a,b):
-            tmp.append(sng[i])
-            find(a+1,b,tmp)
+        for i in range(b,N):
+            c[a] = i
+            comb(a+1,i+1,c)
 
 
 
 N = int(input())
 sng = [ list(map(int,input().split())) for _ in range(N) ]
-res = []
-n = N//2
 
-find(0,len(sng),[])
-print(res)
+total = 0
+for i in range(N):
+    total+=sum(i)
+
+cmp = total>>1
+
+n = N//2
+tmp = [-1]*n
+res = []
+comb(0,0,tmp)
+
+
+
 
 
 
