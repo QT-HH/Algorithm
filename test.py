@@ -1,29 +1,14 @@
-for test_case in range(1, 2):
-    n= input()
-    ladder = [list(map(int, input().split())) for _ in range(100)]
+def Sum3(x, y, z):
+    tmp = 0
+    for i in range(x, y+1, z):
+        tmp += 1
+    return tmp
 
-    idx = []
-    total_m = []
-    for j in range(100):
-        moves = 0
-        if ladder[0][j] == 1:
-            idx.append(j)
-            i = 0
-            while(i<99) :
-                while j<99 and ladder[i][j+1]:
-                    j+=1
-                    moves+=1
-                else:
-                    i+=1
-                    moves+=1
-                while j>0 and ladder[i][j-1]:
-                    j-=1
-                    moves+=1
-                else:
-                    i+=1
-                    moves+=1
-                if i == 99: break
-                i+=1
-                moves+=1
-            total_m.append(moves)
-    print(f'#{test_case} {idx[total_m.index(min(total_m))]}')
+return_value = Sum3(1, 100, 2)
+print(' 10 ~ 100까지 홀수 합 ==> ', return_value)
+
+return_value = Sum3(2, 100, 2)
+print(' 1 ~ 100까지 짝수 합 ==> ', return_value)
+
+return_value = Sum3(10, 1000, 10)
+print(' 10 ~ 1000까지 10의 배수 합 ==> ', return_value)
