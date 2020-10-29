@@ -22,6 +22,8 @@ def comb(a,b,c):
             else:
                 x += 1
             tmp_val += board[x][y]
+            if tmp_val > min_val[0]:
+                break
 
         if min_val[0] > tmp_val:
             min_val[0] = tmp_val
