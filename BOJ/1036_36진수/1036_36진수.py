@@ -30,6 +30,7 @@ for i in nums:
         sel[j].append(q)
         q+=1
 
+
 data = []
 for i in sel:
     if sel[i]:
