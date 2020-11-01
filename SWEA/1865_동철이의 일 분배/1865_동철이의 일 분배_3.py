@@ -12,8 +12,8 @@ def f2(n, k, s):
     else:
         for i in range(n, k):
             p[n], p[i] = p[i], p[n]
+            print(n,i,p)
             f2(n + 1, k, s * P[n][p[n]] / 100)
-            print(p)
             p[n], p[i] = p[i], p[n]
 
 
