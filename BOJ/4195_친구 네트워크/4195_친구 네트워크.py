@@ -9,6 +9,8 @@ def getParent(parents,x):
     return p
 
 def unionParent(parents,x1,x2,cnt):
+    if cnt[x1] < cnt[x2]:
+        x1,x2 = x2,x1
     a = getParent(parents, x1)
     b = getParent(parents, x2)
     if a!=b:
