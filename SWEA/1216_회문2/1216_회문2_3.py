@@ -1,3 +1,8 @@
+import sys
+sys.stdin = open('sample_input.txt')
+
+import time
+
 def pal(x):
     for i in range(1, 101)[::-1]:
         for words in x:
@@ -6,9 +11,6 @@ def pal(x):
                 if y == y[::-1]:
                     return i
 
-import sys
-import time
-sys.stdin = open('sample_input.txt')
 for test_case in range(1, 11):
     start = time.time()
     n = int(input())
