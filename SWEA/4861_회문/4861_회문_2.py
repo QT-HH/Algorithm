@@ -2,11 +2,13 @@ import sys
 sys.stdin = open('input.txt')
 
 T = int(input())
-for test_case in range(1, T + 1):
+for test_case in range(1,T+1):
     N,M = map(int, input().split())
     box = [input() for _ in range(N)]
     box_col = [''.join(i) for i in zip(*box)]
     result = ''
+
+
     for i in box:
         for j in range(len(i)-M+1):
             x = i[j:j+M]

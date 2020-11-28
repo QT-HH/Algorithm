@@ -12,6 +12,9 @@ for i in range(1,N):
     for j in range(N):
         board[i][j] += board[i-1][j]
 
+for i in board:
+    print(i)
+
 for _ in range(M):
     y1,x1,y2,x2 = map(lambda x:int(x)-1,input().split())
     cnt=0
