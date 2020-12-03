@@ -27,6 +27,8 @@ for i in range(len(col)):
 left = sorted(col[:center], key=lambda x: -x[1])
 right = sorted(col[center+1:], key=lambda x: -x[1])
 
+print(left)
+
 h = col[center][1]
 min_l = col[center][0]
 for i in left:
