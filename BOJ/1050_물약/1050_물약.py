@@ -2,21 +2,37 @@ import sys
 sys.stdin = open('input.txt')
 
 def find(name):
-    tmp = 101
-    if cost.get(name):
-        return cost[name]
-
+    total = 0
+    res = 1000000001
+    flag = False
     if market.get(name):
-        tmp = market[name]
+        res = market[name]
+        flag = True
     if exp.get(name):
+        tmp = 0
         for i in exp[name]:
-            x = 0
             for j in i:
-                x += find(j)
-            tmp = min(tmp,x)
+                now = find(j)
+                if now:
+                    tmp += i[j] * now
+                else:
+                    break
+            else:
+                continue
+            break
+        else:
+            res = min(res,tmp)
+            flag = True
 
-    cost[name] = tmp
-    return tmp
+
+    if flag:
+        if res > 1000000000:
+            return 1000000001
+        else:
+            return res
+    else:
+        return -1
+
 
 
 N,M = map(int,input().split())
@@ -44,6 +60,8 @@ for i in range(M):
         exp[x] = [material]
 
 cost = {}
-res = 0
-for i in exp['LOVE']:
-    find(i)
+visited = set()
+print(market)
+print(exp)
+# print(find('LOVE'))
+
