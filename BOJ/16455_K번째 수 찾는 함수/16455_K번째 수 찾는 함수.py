@@ -4,7 +4,14 @@ def kth(a,k):
     for i in a:
         sh, re = divmod(i,100000)
         x[sh] += 1
-        y[sh].append(re)
 
     cnt = 0
-    for i in x:
+    for i in range(10001):
+        cnt += x[i]
+        if cnt >= k:
+            cnt -= x[i]
+            q = i
+            break
+    pass
+
+    
