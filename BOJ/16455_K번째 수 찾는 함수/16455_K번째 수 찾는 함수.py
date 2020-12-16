@@ -1,8 +1,9 @@
 def kth(a,k):
     x = [0] * 10001
-    y = [0] * 100000
+    y = [0] * 10001
+    z = [0] * 100000
     for i in a:
-        sh, re = divmod(i,100000)
+        sh = i % 100000
         x[sh] += 1
 
     cnt = 0
@@ -12,6 +13,8 @@ def kth(a,k):
             cnt -= x[i]
             q = i
             break
-    pass
+    
+    for i in a:
+
 
     
