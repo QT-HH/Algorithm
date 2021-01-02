@@ -1,8 +1,7 @@
-a = input()
-b = ord(a)
-if 65<= b <=90:
-    print('{}(ASCII: {}) => {}(ASCII: {})'.format(a,b,a.lower(),ord(a.lower())))
-elif 97<= b <=122:
-    print('{}(ASCII: {}) => {}(ASCII: {})'.format(a,b,a.upper(),ord(a.upper())))
-else:
-    print(a)
+import time
+start = time.time()
+cnt = 0
+for i in range(100000000):
+    cnt +=1
+
+print("time :", time.time() - start)
