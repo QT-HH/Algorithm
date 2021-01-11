@@ -1,14 +1,21 @@
-def Sum3(x, y, z):
-    tmp = 0
-    for i in range(x, y+1, z):
-        tmp += 1
-    return tmp
+class Student:
+    def __init__(self,name):
+        self.name = name
 
-return_value = Sum3(1, 100, 2)
-print(' 10 ~ 100까지 홀수 합 ==> ', return_value)
+    def printName(self):
+        print(self.name)
 
-return_value = Sum3(2, 100, 2)
-print(' 1 ~ 100까지 짝수 합 ==> ', return_value)
+class GraduateStudent(Student):
+    # def __init__(self,major):
+    #     # self.name = name
+    #     self.major = major
 
-return_value = Sum3(10, 1000, 10)
-print(' 10 ~ 1000까지 10의 배수 합 ==> ', return_value)
+    def printMajor(self):
+        print(self.major)
+
+s1 = Student('홍길동')
+s2 = GraduateStudent('컴퓨터')
+
+s1.printName()
+s2.printName()
+s2.printMajor()

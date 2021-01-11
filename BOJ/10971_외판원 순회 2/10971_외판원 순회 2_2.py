@@ -10,7 +10,6 @@ def find(now, before):
     if before == (1 << n) - 1:
         return path[now][0] if path[now][0] > 0 else sys.maxsize
 
-    # 현재 지점에서 이동할 수 있는 지점들을 탐색
     cost = sys.maxsize
     for i in range(1, n):
         if not (before >> i) % 2 and path[now][i]:
@@ -18,6 +17,7 @@ def find(now, before):
             tmp = find(i, before | (1 << i))  # before | (1<<i) == before + (1<<i)
             # (now~i), (i~0)의 합과 현재까지의 최소 비용과 비교
             cost = min(cost, tmp + path[now][i])
+    # 현재 지점에서 이동할 수 있는 지점들을 탐색
 
     # 메모이제이션
     dp[now][before] = cost
