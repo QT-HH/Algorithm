@@ -1,14 +1,20 @@
 import sys
 sys.stdin = open('input.txt')
 
+dualList = [*map(lambda x: x*x, range(100000000000000))]
+
 T = int(input())
 for t in range(1,T+1):
     x = int(input())
-    i = 2
-    yak = {}
-    visited = set()
-    res = 1
+    y = x**0.5
+    if y == int(y):
+        y=int(y)
+    else:
+        y=int(y)+1
 
+    for i in range(y,3164):
+        if not dualList[i]%x:
+            res = dualList[i]//x
+            break
 
-
-    # print('#{} {}'.format(t, res))
+    print('#{} {}'.format(t, res))
