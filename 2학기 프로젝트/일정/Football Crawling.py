@@ -1,11 +1,16 @@
 import json
 import sys
-sys.stdin = open('inputFoot.txt','rt',encoding='UTF8')
+sys.stdin = open('inputFoot.txt', 'rt', encoding='UTF8')
 
 team = {}
 teams = ["강원","광주","대구","서울","성남","수원","수원FC","울산","인천","전북","제주","포항"]
 for i in range(1,13):
     team[teams[i-1]] = i
+
+# for i in range(1,13):
+#     team[i] = teams[i-1]
+
+print(team)
 
 res = []
 
@@ -29,6 +34,13 @@ while True:
         event["team1_id"] = team[team1]
         event["team2_id"] = team[team2]
         event["name"] = "{} vs {}".format(team1,team2)
+        event["team1_score"] = 0
+        event["team2_score"] = 0
+        event["team1_user"] = []
+        event["team2_user"] = []
+        event["draw_user"] = []
+        event["betDone"] = False
+        event["gameDone"] = False
 
         res.append(event)
 
