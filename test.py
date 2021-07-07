@@ -1,21 +1,12 @@
-class Student:
-    def __init__(self,name):
-        self.name = name
+T = int(input())
 
-    def printName(self):
-        print(self.name)
-
-class GraduateStudent(Student):
-    # def __init__(self,major):
-    #     # self.name = name
-    #     self.major = major
-
-    def printMajor(self):
-        print(self.major)
-
-s1 = Student('홍길동')
-s2 = GraduateStudent('컴퓨터')
-
-s1.printName()
-s2.printName()
-s2.printMajor()
+for j in range(0, T):
+    x = list(map(int,input().split()))
+    while len(x)!=1:
+        if x[0]>x[1]:
+            x.pop(1)
+        elif x[0]<x[1]:
+            x.pop(0)
+        elif x[0]==x[1]:
+            x.pop(0)
+    print(x[0])
