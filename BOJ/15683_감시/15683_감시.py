@@ -11,7 +11,7 @@ walls = set()
 for i in range(N):
     for j in range(M):
         if 0 < room[i][j] <= 5:
-            cameras.append((i, j, room[i][j],))
+            cameras.append((i, j, room[i][j]))
         elif room[i][j] == 6:
             walls.add((i,j))
 
